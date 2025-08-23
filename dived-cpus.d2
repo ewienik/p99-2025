@@ -1,0 +1,100 @@
+classes: {
+  invisible: {
+    style.opacity: 0
+    label: ""
+  }
+}
+
+grid-rows: 5
+grid-columns: 4
+
+a1s4
+setup-a1s4: "" {
+  class: invisible
+  grid-rows: 1
+  grid-gap: 0
+
+  0: "" {
+    grid-columns: 1
+    grid-gap: 0
+    sync
+    async
+  }
+
+  1: sync
+  2: sync
+  3: sync
+}
+a1s4 -> setup-a1s4
+
+a4s4
+setup-a4s4: "" {
+  class: invisible
+  grid-rows: 1
+  grid-gap: 0
+
+  0: "" {
+    grid-columns: 1
+    grid-gap: 0
+    sync
+    async
+  }
+  1: "" {
+    grid-columns: 1
+    grid-gap: 0
+    sync
+    async
+  }
+  2: "" {
+    grid-columns: 1
+    grid-gap: 0
+    sync
+    async
+  }
+  3: "" {
+    grid-columns: 1
+    grid-gap: 0
+    sync
+    async
+  }
+}
+a4s4 -> setup-a4s4
+
+a1s3
+setup-a1s3: "" {
+  class: invisible
+  grid-rows: 1
+  grid-gap: 0
+
+  0: async
+  1: sync
+  2: sync
+  3: sync
+}
+a1s3 -> setup-a1s3
+
+a2s2
+setup-a2s2: "" {
+  class: invisible
+  grid-rows: 1
+  grid-gap: 0
+
+  0: async
+  1: async
+  2: sync
+  3: sync
+}
+a2s2 -> setup-a2s2
+
+a4s0
+setup-a4s0: "" {
+  class: invisible
+  grid-rows: 1
+  grid-gap: 0
+
+  0: async
+  1: async
+  2: async
+  3: async
+}
+a4s0 -> setup-a4s0

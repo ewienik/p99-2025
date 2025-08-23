@@ -1,0 +1,35 @@
+grid-rows: 2
+
+dc: Datacenter {
+  grid-rows: 1
+
+  rack1: AZ {
+    direction: up
+    scylla.shape: cylinder
+    vector-store
+    scylla -> vector-store: HTTP
+    vector-store -- scylla: CQL/CDC
+  }
+
+  rack2: AZ {
+    direction: up
+    scylla.shape: cylinder
+    vector-store
+    scylla -> vector-store: HTTP
+    vector-store -- scylla: CQL/CDC
+  }
+
+  rack3: AZ {
+    direction: up
+    scylla.shape: cylinder
+    vector-store
+    scylla -> vector-store: HTTP
+    vector-store -- scylla: CQL/CDC
+  }
+
+  rack1.scylla -- rack2.scylla -- rack3.scylla
+}
+
+client -- dc.rack1.scylla: CQL
+client -- dc.rack2.scylla: CQL
+client -- dc.rack3.scylla: CQL

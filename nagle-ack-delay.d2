@@ -1,0 +1,35 @@
+direction: right
+
+out: "" {
+  delay: Nagle Enabled + Delayed ACK {
+    shape: sequence_diagram
+    client -> client-tcp-stack: Send the big request
+    client-tcp-stack -> server-tcp-stack: Packet 1/2
+    client-tcp-stack -> client-tcp-stack: Wait for ACK
+    server-tcp-stack -> server: Packet 1/2
+    server -> server: Wait for the rest of request
+    server-tcp-stack -> server-tcp-stack: Wait for response
+    server-tcp-stack -> client-tcp-stack: ACK (no respone in 40ms)
+    client-tcp-stack -> server-tcp-stack: Packet 2/2
+    server-tcp-stack -> server: Packet 2/2
+    server -> server: Processing request
+    server -> server-tcp-stack: Send the response
+    server-tcp-stack -> client-tcp-stack: Response packet + ACK
+    client-tcp-stack -> client: Response packet
+  }
+
+  no_delay: Nagle Disabled + Delayed ACK {
+    shape: sequence_diagram
+    client -> client-tcp-stack: Send the big request
+    client-tcp-stack -> server-tcp-stack: Packet 1/2
+    server-tcp-stack -> server: Packet 1/2
+    client-tcp-stack -> server-tcp-stack: Packet 2/2
+    server-tcp-stack -> server: Packet 2/2
+    server -> server: Processing request
+    server -> server-tcp-stack: Send the response
+    server-tcp-stack -> client-tcp-stack: Response packet + ACK
+    client-tcp-stack -> client: Response packet
+  }
+
+  delay -> no_delay: set SO_NODELAY
+}

@@ -1,0 +1,30 @@
+classes: {
+  invisible: {
+    style.opacity: 0
+    label: a
+  }
+}
+
+direction: right
+
+scylla.shape: cylinder
+
+vector-store: {
+  httpd
+  db-index
+  db
+  monitor-items
+  monitor-indexes
+  index: {
+    uSearch.height: 200
+  }
+
+  db <- monitor-indexes
+  db-index -> monitor-items
+  monitor-items -> index: Modify
+  httpd -> index: ANN Search
+}
+
+scylla -- vector-store.db: CQL
+scylla -- vector-store.db-index: CQL/CDC
+scylla -> vector-store.httpd: HTTP
