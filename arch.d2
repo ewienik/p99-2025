@@ -1,35 +1,119 @@
+style: {
+  fill: transparent
+}
+
+classes: {
+  dc-invisible: {
+    style.opacity: 0.0
+    label: "__"
+  }
+  az-invisible: {
+    style.opacity: 0.0
+    label: "."
+  }
+  client-invisible: {
+    style.opacity: 0.0
+    label: "_____"
+  }
+  vector-store: {
+    label: "                  Vector Store                 "
+  }
+  scylla: {
+    label: "                     Scylla                    "
+    shape: cylinder
+  }
+}
+
 grid-rows: 2
 
 dc: Datacenter {
   grid-rows: 1
 
+  pad1: "" {
+    class: dc-invisible
+  }
+
   rack1: AZ {
-    direction: up
-    scylla.shape: cylinder
-    vector-store
+    direction: down
+    vector-store.class: vector-store
+    scylla.class: scylla
     scylla -> vector-store: HTTP
     vector-store -- scylla: CQL/CDC
+  }
+
+  pad2: "" {
+    class: dc-invisible
   }
 
   rack2: AZ {
-    direction: up
-    scylla.shape: cylinder
-    vector-store
+    direction: down
+    vector-store.class: vector-store
+    scylla.class: scylla
     scylla -> vector-store: HTTP
     vector-store -- scylla: CQL/CDC
   }
 
+  pad3: "" {
+    class: dc-invisible
+  }
+
   rack3: AZ {
-    direction: up
-    scylla.shape: cylinder
-    vector-store
+    direction: down
+    vector-store.class: vector-store
+    scylla.class: scylla
     scylla -> vector-store: HTTP
     vector-store -- scylla: CQL/CDC
+  }
+
+  pad4: "" {
+    class: dc-invisible
   }
 
   rack1.scylla -- rack2.scylla -- rack3.scylla
 }
 
-client -- dc.rack1.scylla: CQL
-client -- dc.rack2.scylla: CQL
-client -- dc.rack3.scylla: CQL
+clients: "" {
+  class: client-invisible
+
+  client_0: "client"
+
+  pad1: "" {
+    class: client-invisible
+  }
+
+  client_1: "client"
+
+  pad2: "" {
+    class: client-invisible
+  }
+
+  client_2: "client"
+
+  pad3: "" {
+    class: client-invisible
+  }
+
+  client
+
+  pad6: "" {
+    class: client-invisible
+  }
+
+  client_N-2: "client"
+
+  pad7: "" {
+    class: client-invisible
+  }
+
+  client_N-1: "client"
+
+  pad8: "" {
+    class: client-invisible
+  }
+
+  client_N: "client"
+}
+
+clients.client -- dc.rack1.scylla: CQL
+clients.client -- dc.rack2.scylla: CQL
+clients.client -- dc.rack3.scylla: CQL

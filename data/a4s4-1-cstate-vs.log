@@ -1,0 +1,759 @@
+-------------------
+search vector-store
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 1
+[2m2025-09-10T11:55:35.295601Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:55:37.296458Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:55:47.296171Z[0m [32m INFO[0m queries: 6451
+[2m2025-09-10T11:55:47.296180Z[0m [32m INFO[0m QPS: 645.12
+[2m2025-09-10T11:55:47.296184Z[0m [32m INFO[0m latency min: 794.8µs
+[2m2025-09-10T11:55:47.296187Z[0m [32m INFO[0m latency P01: 1.0ms
+[2m2025-09-10T11:55:47.296190Z[0m [32m INFO[0m latency P10: 1.3ms
+[2m2025-09-10T11:55:47.296191Z[0m [32m INFO[0m latency P25: 1.4ms
+[2m2025-09-10T11:55:47.296192Z[0m [32m INFO[0m latency P50: 1.6ms
+[2m2025-09-10T11:55:47.296193Z[0m [32m INFO[0m latency P75: 1.7ms
+[2m2025-09-10T11:55:47.296194Z[0m [32m INFO[0m latency P90: 1.8ms
+[2m2025-09-10T11:55:47.296195Z[0m [32m INFO[0m latency P99: 2.0ms
+[2m2025-09-10T11:55:47.296196Z[0m [32m INFO[0m latency max: 2.6ms
+[2m2025-09-10T11:55:47.296197Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:55:47.296198Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:55:47.296199Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 2
+[2m2025-09-10T11:55:47.389382Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:55:49.390385Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:55:59.390625Z[0m [32m INFO[0m queries: 11208
+[2m2025-09-10T11:55:59.390638Z[0m [32m INFO[0m QPS: 1120.78
+[2m2025-09-10T11:55:59.390641Z[0m [32m INFO[0m latency min: 958.5µs
+[2m2025-09-10T11:55:59.390643Z[0m [32m INFO[0m latency P01: 1.2ms
+[2m2025-09-10T11:55:59.390644Z[0m [32m INFO[0m latency P10: 1.4ms
+[2m2025-09-10T11:55:59.390645Z[0m [32m INFO[0m latency P25: 1.6ms
+[2m2025-09-10T11:55:59.390648Z[0m [32m INFO[0m latency P50: 1.8ms
+[2m2025-09-10T11:55:59.390649Z[0m [32m INFO[0m latency P75: 1.9ms
+[2m2025-09-10T11:55:59.390650Z[0m [32m INFO[0m latency P90: 2.2ms
+[2m2025-09-10T11:55:59.390651Z[0m [32m INFO[0m latency P99: 2.6ms
+[2m2025-09-10T11:55:59.390652Z[0m [32m INFO[0m latency max: 2.9ms
+[2m2025-09-10T11:55:59.390653Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:55:59.390654Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:55:59.390655Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 3
+[2m2025-09-10T11:55:59.483396Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:56:01.484345Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:56:11.484449Z[0m [32m INFO[0m queries: 14732
+[2m2025-09-10T11:56:11.484465Z[0m [32m INFO[0m QPS: 1473.19
+[2m2025-09-10T11:56:11.484468Z[0m [32m INFO[0m latency min: 950.7µs
+[2m2025-09-10T11:56:11.484472Z[0m [32m INFO[0m latency P01: 1.2ms
+[2m2025-09-10T11:56:11.484473Z[0m [32m INFO[0m latency P10: 1.6ms
+[2m2025-09-10T11:56:11.484475Z[0m [32m INFO[0m latency P25: 1.7ms
+[2m2025-09-10T11:56:11.484476Z[0m [32m INFO[0m latency P50: 2.0ms
+[2m2025-09-10T11:56:11.484477Z[0m [32m INFO[0m latency P75: 2.3ms
+[2m2025-09-10T11:56:11.484478Z[0m [32m INFO[0m latency P90: 2.5ms
+[2m2025-09-10T11:56:11.484479Z[0m [32m INFO[0m latency P99: 3.3ms
+[2m2025-09-10T11:56:11.484480Z[0m [32m INFO[0m latency max: 4.8ms
+[2m2025-09-10T11:56:11.484481Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:56:11.484482Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:56:11.484483Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 4
+[2m2025-09-10T11:56:11.576062Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:56:13.576958Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:56:23.577611Z[0m [32m INFO[0m queries: 16573
+[2m2025-09-10T11:56:23.577626Z[0m [32m INFO[0m QPS: 1657.20
+[2m2025-09-10T11:56:23.577630Z[0m [32m INFO[0m latency min: 1.1ms
+[2m2025-09-10T11:56:23.577633Z[0m [32m INFO[0m latency P01: 1.5ms
+[2m2025-09-10T11:56:23.577635Z[0m [32m INFO[0m latency P10: 1.9ms
+[2m2025-09-10T11:56:23.577636Z[0m [32m INFO[0m latency P25: 2.1ms
+[2m2025-09-10T11:56:23.577638Z[0m [32m INFO[0m latency P50: 2.4ms
+[2m2025-09-10T11:56:23.577639Z[0m [32m INFO[0m latency P75: 2.6ms
+[2m2025-09-10T11:56:23.577640Z[0m [32m INFO[0m latency P90: 3.0ms
+[2m2025-09-10T11:56:23.577642Z[0m [32m INFO[0m latency P99: 4.2ms
+[2m2025-09-10T11:56:23.577643Z[0m [32m INFO[0m latency max: 9.8ms
+[2m2025-09-10T11:56:23.577645Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:56:23.577646Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:56:23.577648Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 5
+[2m2025-09-10T11:56:23.673443Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:56:25.673414Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:56:35.674489Z[0m [32m INFO[0m queries: 17303
+[2m2025-09-10T11:56:35.674503Z[0m [32m INFO[0m QPS: 1730.12
+[2m2025-09-10T11:56:35.674506Z[0m [32m INFO[0m latency min: 1.1ms
+[2m2025-09-10T11:56:35.674510Z[0m [32m INFO[0m latency P01: 1.6ms
+[2m2025-09-10T11:56:35.674512Z[0m [32m INFO[0m latency P10: 2.1ms
+[2m2025-09-10T11:56:35.674513Z[0m [32m INFO[0m latency P25: 2.4ms
+[2m2025-09-10T11:56:35.674515Z[0m [32m INFO[0m latency P50: 2.7ms
+[2m2025-09-10T11:56:35.674516Z[0m [32m INFO[0m latency P75: 3.3ms
+[2m2025-09-10T11:56:35.674517Z[0m [32m INFO[0m latency P90: 4.0ms
+[2m2025-09-10T11:56:35.674519Z[0m [32m INFO[0m latency P99: 5.0ms
+[2m2025-09-10T11:56:35.674520Z[0m [32m INFO[0m latency max: 9.8ms
+[2m2025-09-10T11:56:35.674522Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:56:35.674523Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:56:35.674525Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 6
+[2m2025-09-10T11:56:35.764658Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:56:37.765728Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:56:47.767913Z[0m [32m INFO[0m queries: 15878
+[2m2025-09-10T11:56:47.767927Z[0m [32m INFO[0m QPS: 1587.47
+[2m2025-09-10T11:56:47.767932Z[0m [32m INFO[0m latency min: 1.4ms
+[2m2025-09-10T11:56:47.767936Z[0m [32m INFO[0m latency P01: 2.0ms
+[2m2025-09-10T11:56:47.767938Z[0m [32m INFO[0m latency P10: 2.6ms
+[2m2025-09-10T11:56:47.767940Z[0m [32m INFO[0m latency P25: 3.0ms
+[2m2025-09-10T11:56:47.767941Z[0m [32m INFO[0m latency P50: 3.6ms
+[2m2025-09-10T11:56:47.767942Z[0m [32m INFO[0m latency P75: 4.4ms
+[2m2025-09-10T11:56:47.767944Z[0m [32m INFO[0m latency P90: 5.2ms
+[2m2025-09-10T11:56:47.767945Z[0m [32m INFO[0m latency P99: 6.7ms
+[2m2025-09-10T11:56:47.767947Z[0m [32m INFO[0m latency max: 8.8ms
+[2m2025-09-10T11:56:47.767948Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:56:47.767950Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:56:47.767952Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 7
+[2m2025-09-10T11:56:47.866325Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:56:49.867336Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:56:59.869471Z[0m [32m INFO[0m queries: 17416
+[2m2025-09-10T11:56:59.869485Z[0m [32m INFO[0m QPS: 1741.24
+[2m2025-09-10T11:56:59.869489Z[0m [32m INFO[0m latency min: 1.2ms
+[2m2025-09-10T11:56:59.869491Z[0m [32m INFO[0m latency P01: 2.1ms
+[2m2025-09-10T11:56:59.869493Z[0m [32m INFO[0m latency P10: 2.8ms
+[2m2025-09-10T11:56:59.869494Z[0m [32m INFO[0m latency P25: 3.2ms
+[2m2025-09-10T11:56:59.869495Z[0m [32m INFO[0m latency P50: 3.9ms
+[2m2025-09-10T11:56:59.869496Z[0m [32m INFO[0m latency P75: 4.6ms
+[2m2025-09-10T11:56:59.869497Z[0m [32m INFO[0m latency P90: 5.5ms
+[2m2025-09-10T11:56:59.869499Z[0m [32m INFO[0m latency P99: 7.4ms
+[2m2025-09-10T11:56:59.869500Z[0m [32m INFO[0m latency max: 12.2ms
+[2m2025-09-10T11:56:59.869500Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:56:59.869502Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:56:59.869502Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 8
+[2m2025-09-10T11:56:59.959422Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:57:01.960383Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:57:11.962101Z[0m [32m INFO[0m queries: 17110
+[2m2025-09-10T11:57:11.962114Z[0m [32m INFO[0m QPS: 1710.72
+[2m2025-09-10T11:57:11.962117Z[0m [32m INFO[0m latency min: 1.3ms
+[2m2025-09-10T11:57:11.962121Z[0m [32m INFO[0m latency P01: 2.3ms
+[2m2025-09-10T11:57:11.962122Z[0m [32m INFO[0m latency P10: 3.2ms
+[2m2025-09-10T11:57:11.962123Z[0m [32m INFO[0m latency P25: 3.9ms
+[2m2025-09-10T11:57:11.962124Z[0m [32m INFO[0m latency P50: 4.5ms
+[2m2025-09-10T11:57:11.962126Z[0m [32m INFO[0m latency P75: 5.3ms
+[2m2025-09-10T11:57:11.962127Z[0m [32m INFO[0m latency P90: 6.3ms
+[2m2025-09-10T11:57:11.962129Z[0m [32m INFO[0m latency P99: 8.4ms
+[2m2025-09-10T11:57:11.962130Z[0m [32m INFO[0m latency max: 17.2ms
+[2m2025-09-10T11:57:11.962131Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:57:11.962133Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:57:11.962134Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 9
+[2m2025-09-10T11:57:12.051219Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:57:14.052237Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:57:24.054754Z[0m [32m INFO[0m queries: 17991
+[2m2025-09-10T11:57:24.054767Z[0m [32m INFO[0m QPS: 1798.66
+[2m2025-09-10T11:57:24.054771Z[0m [32m INFO[0m latency min: 1.4ms
+[2m2025-09-10T11:57:24.054774Z[0m [32m INFO[0m latency P01: 2.4ms
+[2m2025-09-10T11:57:24.054776Z[0m [32m INFO[0m latency P10: 3.5ms
+[2m2025-09-10T11:57:24.054777Z[0m [32m INFO[0m latency P25: 4.1ms
+[2m2025-09-10T11:57:24.054778Z[0m [32m INFO[0m latency P50: 4.9ms
+[2m2025-09-10T11:57:24.054779Z[0m [32m INFO[0m latency P75: 5.6ms
+[2m2025-09-10T11:57:24.054780Z[0m [32m INFO[0m latency P90: 6.7ms
+[2m2025-09-10T11:57:24.054781Z[0m [32m INFO[0m latency P99: 9.3ms
+[2m2025-09-10T11:57:24.054782Z[0m [32m INFO[0m latency max: 28.1ms
+[2m2025-09-10T11:57:24.054783Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:57:24.054784Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:57:24.054785Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 10
+[2m2025-09-10T11:57:24.145661Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:57:26.146624Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:57:36.147888Z[0m [32m INFO[0m queries: 18652
+[2m2025-09-10T11:57:36.147903Z[0m [32m INFO[0m QPS: 1864.98
+[2m2025-09-10T11:57:36.147908Z[0m [32m INFO[0m latency min: 1.6ms
+[2m2025-09-10T11:57:36.147911Z[0m [32m INFO[0m latency P01: 2.7ms
+[2m2025-09-10T11:57:36.147913Z[0m [32m INFO[0m latency P10: 3.9ms
+[2m2025-09-10T11:57:36.147915Z[0m [32m INFO[0m latency P25: 4.5ms
+[2m2025-09-10T11:57:36.147916Z[0m [32m INFO[0m latency P50: 5.2ms
+[2m2025-09-10T11:57:36.147918Z[0m [32m INFO[0m latency P75: 6.0ms
+[2m2025-09-10T11:57:36.147919Z[0m [32m INFO[0m latency P90: 7.0ms
+[2m2025-09-10T11:57:36.147921Z[0m [32m INFO[0m latency P99: 9.9ms
+[2m2025-09-10T11:57:36.147922Z[0m [32m INFO[0m latency max: 33.5ms
+[2m2025-09-10T11:57:36.147924Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:57:36.147926Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:57:36.147927Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 11
+[2m2025-09-10T11:57:36.235748Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:57:38.236619Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:57:48.240460Z[0m [32m INFO[0m queries: 18874
+[2m2025-09-10T11:57:48.240473Z[0m [32m INFO[0m QPS: 1886.69
+[2m2025-09-10T11:57:48.240478Z[0m [32m INFO[0m latency min: 1.6ms
+[2m2025-09-10T11:57:48.240482Z[0m [32m INFO[0m latency P01: 3.0ms
+[2m2025-09-10T11:57:48.240484Z[0m [32m INFO[0m latency P10: 4.2ms
+[2m2025-09-10T11:57:48.240485Z[0m [32m INFO[0m latency P25: 5.0ms
+[2m2025-09-10T11:57:48.240487Z[0m [32m INFO[0m latency P50: 5.7ms
+[2m2025-09-10T11:57:48.240488Z[0m [32m INFO[0m latency P75: 6.5ms
+[2m2025-09-10T11:57:48.240490Z[0m [32m INFO[0m latency P90: 7.4ms
+[2m2025-09-10T11:57:48.240491Z[0m [32m INFO[0m latency P99: 10.6ms
+[2m2025-09-10T11:57:48.240493Z[0m [32m INFO[0m latency max: 20.3ms
+[2m2025-09-10T11:57:48.240494Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:57:48.240496Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:57:48.240497Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 12
+[2m2025-09-10T11:57:48.329750Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:57:50.330714Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:58:00.335343Z[0m [32m INFO[0m queries: 18489
+[2m2025-09-10T11:58:00.335358Z[0m [32m INFO[0m QPS: 1848.06
+[2m2025-09-10T11:58:00.335361Z[0m [32m INFO[0m latency min: 1.9ms
+[2m2025-09-10T11:58:00.335364Z[0m [32m INFO[0m latency P01: 3.5ms
+[2m2025-09-10T11:58:00.335366Z[0m [32m INFO[0m latency P10: 4.9ms
+[2m2025-09-10T11:58:00.335367Z[0m [32m INFO[0m latency P25: 5.7ms
+[2m2025-09-10T11:58:00.335369Z[0m [32m INFO[0m latency P50: 6.4ms
+[2m2025-09-10T11:58:00.335370Z[0m [32m INFO[0m latency P75: 7.1ms
+[2m2025-09-10T11:58:00.335371Z[0m [32m INFO[0m latency P90: 8.1ms
+[2m2025-09-10T11:58:00.335372Z[0m [32m INFO[0m latency P99: 11.2ms
+[2m2025-09-10T11:58:00.335374Z[0m [32m INFO[0m latency max: 46.0ms
+[2m2025-09-10T11:58:00.335375Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:58:00.335376Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:58:00.335377Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 13
+[2m2025-09-10T11:58:00.427097Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:58:02.427991Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:58:12.433454Z[0m [32m INFO[0m queries: 18315
+[2m2025-09-10T11:58:12.433468Z[0m [32m INFO[0m QPS: 1830.51
+[2m2025-09-10T11:58:12.433472Z[0m [32m INFO[0m latency min: 2.4ms
+[2m2025-09-10T11:58:12.433474Z[0m [32m INFO[0m latency P01: 3.9ms
+[2m2025-09-10T11:58:12.433476Z[0m [32m INFO[0m latency P10: 5.5ms
+[2m2025-09-10T11:58:12.433478Z[0m [32m INFO[0m latency P25: 6.3ms
+[2m2025-09-10T11:58:12.433479Z[0m [32m INFO[0m latency P50: 7.0ms
+[2m2025-09-10T11:58:12.433480Z[0m [32m INFO[0m latency P75: 7.8ms
+[2m2025-09-10T11:58:12.433481Z[0m [32m INFO[0m latency P90: 8.8ms
+[2m2025-09-10T11:58:12.433482Z[0m [32m INFO[0m latency P99: 12.0ms
+[2m2025-09-10T11:58:12.433483Z[0m [32m INFO[0m latency max: 26.0ms
+[2m2025-09-10T11:58:12.433484Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:58:12.433485Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:58:12.433486Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 14
+[2m2025-09-10T11:58:12.524526Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:58:14.525497Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:58:24.529982Z[0m [32m INFO[0m queries: 18818
+[2m2025-09-10T11:58:24.529997Z[0m [32m INFO[0m QPS: 1880.97
+[2m2025-09-10T11:58:24.530000Z[0m [32m INFO[0m latency min: 2.6ms
+[2m2025-09-10T11:58:24.530005Z[0m [32m INFO[0m latency P01: 4.4ms
+[2m2025-09-10T11:58:24.530006Z[0m [32m INFO[0m latency P10: 5.9ms
+[2m2025-09-10T11:58:24.530007Z[0m [32m INFO[0m latency P25: 6.6ms
+[2m2025-09-10T11:58:24.530008Z[0m [32m INFO[0m latency P50: 7.3ms
+[2m2025-09-10T11:58:24.530009Z[0m [32m INFO[0m latency P75: 8.1ms
+[2m2025-09-10T11:58:24.530010Z[0m [32m INFO[0m latency P90: 9.0ms
+[2m2025-09-10T11:58:24.530012Z[0m [32m INFO[0m latency P99: 12.2ms
+[2m2025-09-10T11:58:24.530013Z[0m [32m INFO[0m latency max: 33.3ms
+[2m2025-09-10T11:58:24.530014Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:58:24.530015Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:58:24.530015Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 15
+[2m2025-09-10T11:58:24.619896Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:58:26.620827Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:58:36.626504Z[0m [32m INFO[0m queries: 18650
+[2m2025-09-10T11:58:36.626517Z[0m [32m INFO[0m QPS: 1863.95
+[2m2025-09-10T11:58:36.626520Z[0m [32m INFO[0m latency min: 2.1ms
+[2m2025-09-10T11:58:36.626524Z[0m [32m INFO[0m latency P01: 4.8ms
+[2m2025-09-10T11:58:36.626525Z[0m [32m INFO[0m latency P10: 6.4ms
+[2m2025-09-10T11:58:36.626526Z[0m [32m INFO[0m latency P25: 7.2ms
+[2m2025-09-10T11:58:36.626527Z[0m [32m INFO[0m latency P50: 8.0ms
+[2m2025-09-10T11:58:36.626529Z[0m [32m INFO[0m latency P75: 8.7ms
+[2m2025-09-10T11:58:36.626530Z[0m [32m INFO[0m latency P90: 9.7ms
+[2m2025-09-10T11:58:36.626531Z[0m [32m INFO[0m latency P99: 13.0ms
+[2m2025-09-10T11:58:36.626532Z[0m [32m INFO[0m latency max: 28.8ms
+[2m2025-09-10T11:58:36.626533Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:58:36.626534Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:58:36.626535Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 16
+[2m2025-09-10T11:58:36.721933Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:58:38.722901Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:58:48.730024Z[0m [32m INFO[0m queries: 19009
+[2m2025-09-10T11:58:48.730039Z[0m [32m INFO[0m QPS: 1899.56
+[2m2025-09-10T11:58:48.730044Z[0m [32m INFO[0m latency min: 2.4ms
+[2m2025-09-10T11:58:48.730048Z[0m [32m INFO[0m latency P01: 5.2ms
+[2m2025-09-10T11:58:48.730050Z[0m [32m INFO[0m latency P10: 6.8ms
+[2m2025-09-10T11:58:48.730052Z[0m [32m INFO[0m latency P25: 7.6ms
+[2m2025-09-10T11:58:48.730054Z[0m [32m INFO[0m latency P50: 8.3ms
+[2m2025-09-10T11:58:48.730055Z[0m [32m INFO[0m latency P75: 9.1ms
+[2m2025-09-10T11:58:48.730057Z[0m [32m INFO[0m latency P90: 10.1ms
+[2m2025-09-10T11:58:48.730059Z[0m [32m INFO[0m latency P99: 13.3ms
+[2m2025-09-10T11:58:48.730061Z[0m [32m INFO[0m latency max: 57.7ms
+[2m2025-09-10T11:58:48.730062Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:58:48.730064Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:58:48.730065Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 17
+[2m2025-09-10T11:58:48.825269Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:58:50.826275Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:59:00.833031Z[0m [32m INFO[0m queries: 18025
+[2m2025-09-10T11:59:00.833045Z[0m [32m INFO[0m QPS: 1801.29
+[2m2025-09-10T11:59:00.833049Z[0m [32m INFO[0m latency min: 3.2ms
+[2m2025-09-10T11:59:00.833054Z[0m [32m INFO[0m latency P01: 6.0ms
+[2m2025-09-10T11:59:00.833055Z[0m [32m INFO[0m latency P10: 7.8ms
+[2m2025-09-10T11:59:00.833057Z[0m [32m INFO[0m latency P25: 8.6ms
+[2m2025-09-10T11:59:00.833058Z[0m [32m INFO[0m latency P50: 9.3ms
+[2m2025-09-10T11:59:00.833060Z[0m [32m INFO[0m latency P75: 10.2ms
+[2m2025-09-10T11:59:00.833062Z[0m [32m INFO[0m latency P90: 11.2ms
+[2m2025-09-10T11:59:00.833064Z[0m [32m INFO[0m latency P99: 14.7ms
+[2m2025-09-10T11:59:00.833065Z[0m [32m INFO[0m latency max: 35.0ms
+[2m2025-09-10T11:59:00.833066Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:59:00.833068Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:59:00.833070Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 18
+[2m2025-09-10T11:59:00.926053Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:59:02.927028Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:59:12.936608Z[0m [32m INFO[0m queries: 18456
+[2m2025-09-10T11:59:12.936623Z[0m [32m INFO[0m QPS: 1843.84
+[2m2025-09-10T11:59:12.936629Z[0m [32m INFO[0m latency min: 3.8ms
+[2m2025-09-10T11:59:12.936634Z[0m [32m INFO[0m latency P01: 6.4ms
+[2m2025-09-10T11:59:12.936635Z[0m [32m INFO[0m latency P10: 8.1ms
+[2m2025-09-10T11:59:12.936637Z[0m [32m INFO[0m latency P25: 8.9ms
+[2m2025-09-10T11:59:12.936639Z[0m [32m INFO[0m latency P50: 9.7ms
+[2m2025-09-10T11:59:12.936640Z[0m [32m INFO[0m latency P75: 10.5ms
+[2m2025-09-10T11:59:12.936642Z[0m [32m INFO[0m latency P90: 11.4ms
+[2m2025-09-10T11:59:12.936644Z[0m [32m INFO[0m latency P99: 14.7ms
+[2m2025-09-10T11:59:12.936645Z[0m [32m INFO[0m latency max: 23.0ms
+[2m2025-09-10T11:59:12.936647Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:59:12.936648Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:59:12.936650Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 19
+[2m2025-09-10T11:59:13.027804Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:59:15.028816Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:59:25.037297Z[0m [32m INFO[0m queries: 18311
+[2m2025-09-10T11:59:25.037312Z[0m [32m INFO[0m QPS: 1829.56
+[2m2025-09-10T11:59:25.037315Z[0m [32m INFO[0m latency min: 3.4ms
+[2m2025-09-10T11:59:25.037319Z[0m [32m INFO[0m latency P01: 7.0ms
+[2m2025-09-10T11:59:25.037321Z[0m [32m INFO[0m latency P10: 8.7ms
+[2m2025-09-10T11:59:25.037322Z[0m [32m INFO[0m latency P25: 9.5ms
+[2m2025-09-10T11:59:25.037323Z[0m [32m INFO[0m latency P50: 10.3ms
+[2m2025-09-10T11:59:25.037324Z[0m [32m INFO[0m latency P75: 11.1ms
+[2m2025-09-10T11:59:25.037326Z[0m [32m INFO[0m latency P90: 12.1ms
+[2m2025-09-10T11:59:25.037327Z[0m [32m INFO[0m latency P99: 15.6ms
+[2m2025-09-10T11:59:25.037328Z[0m [32m INFO[0m latency max: 21.7ms
+[2m2025-09-10T11:59:25.037329Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:59:25.037330Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:59:25.037331Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 20
+[2m2025-09-10T11:59:25.128449Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:59:27.129431Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:59:37.136080Z[0m [32m INFO[0m queries: 18361
+[2m2025-09-10T11:59:37.136095Z[0m [32m INFO[0m QPS: 1834.89
+[2m2025-09-10T11:59:37.136099Z[0m [32m INFO[0m latency min: 3.9ms
+[2m2025-09-10T11:59:37.136104Z[0m [32m INFO[0m latency P01: 7.4ms
+[2m2025-09-10T11:59:37.136105Z[0m [32m INFO[0m latency P10: 9.1ms
+[2m2025-09-10T11:59:37.136107Z[0m [32m INFO[0m latency P25: 10.0ms
+[2m2025-09-10T11:59:37.136109Z[0m [32m INFO[0m latency P50: 10.8ms
+[2m2025-09-10T11:59:37.136110Z[0m [32m INFO[0m latency P75: 11.7ms
+[2m2025-09-10T11:59:37.136112Z[0m [32m INFO[0m latency P90: 12.7ms
+[2m2025-09-10T11:59:37.136114Z[0m [32m INFO[0m latency P99: 15.9ms
+[2m2025-09-10T11:59:37.136115Z[0m [32m INFO[0m latency max: 28.3ms
+[2m2025-09-10T11:59:37.136116Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:59:37.136118Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:59:37.136119Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 21
+[2m2025-09-10T11:59:37.225434Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:59:39.226444Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T11:59:49.236384Z[0m [32m INFO[0m queries: 18338
+[2m2025-09-10T11:59:49.236398Z[0m [32m INFO[0m QPS: 1831.99
+[2m2025-09-10T11:59:49.236403Z[0m [32m INFO[0m latency min: 2.9ms
+[2m2025-09-10T11:59:49.236408Z[0m [32m INFO[0m latency P01: 8.0ms
+[2m2025-09-10T11:59:49.236409Z[0m [32m INFO[0m latency P10: 9.8ms
+[2m2025-09-10T11:59:49.236411Z[0m [32m INFO[0m latency P25: 10.6ms
+[2m2025-09-10T11:59:49.236413Z[0m [32m INFO[0m latency P50: 11.4ms
+[2m2025-09-10T11:59:49.236415Z[0m [32m INFO[0m latency P75: 12.2ms
+[2m2025-09-10T11:59:49.236416Z[0m [32m INFO[0m latency P90: 13.2ms
+[2m2025-09-10T11:59:49.236418Z[0m [32m INFO[0m latency P99: 16.6ms
+[2m2025-09-10T11:59:49.236420Z[0m [32m INFO[0m latency max: 25.4ms
+[2m2025-09-10T11:59:49.236421Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T11:59:49.236423Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T11:59:49.236424Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 22
+[2m2025-09-10T11:59:49.327643Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T11:59:51.328805Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:00:01.338791Z[0m [32m INFO[0m queries: 18750
+[2m2025-09-10T12:00:01.338806Z[0m [32m INFO[0m QPS: 1873.14
+[2m2025-09-10T12:00:01.338810Z[0m [32m INFO[0m latency min: 4.4ms
+[2m2025-09-10T12:00:01.338814Z[0m [32m INFO[0m latency P01: 8.2ms
+[2m2025-09-10T12:00:01.338816Z[0m [32m INFO[0m latency P10: 10.0ms
+[2m2025-09-10T12:00:01.338817Z[0m [32m INFO[0m latency P25: 10.8ms
+[2m2025-09-10T12:00:01.338818Z[0m [32m INFO[0m latency P50: 11.6ms
+[2m2025-09-10T12:00:01.338819Z[0m [32m INFO[0m latency P75: 12.5ms
+[2m2025-09-10T12:00:01.338821Z[0m [32m INFO[0m latency P90: 13.5ms
+[2m2025-09-10T12:00:01.338822Z[0m [32m INFO[0m latency P99: 16.9ms
+[2m2025-09-10T12:00:01.338823Z[0m [32m INFO[0m latency max: 88.7ms
+[2m2025-09-10T12:00:01.338824Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:00:01.338825Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:00:01.338826Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 23
+[2m2025-09-10T12:00:01.425803Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:00:03.426681Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:00:13.436391Z[0m [32m INFO[0m queries: 18975
+[2m2025-09-10T12:00:13.436406Z[0m [32m INFO[0m QPS: 1895.67
+[2m2025-09-10T12:00:13.436409Z[0m [32m INFO[0m latency min: 3.5ms
+[2m2025-09-10T12:00:13.436411Z[0m [32m INFO[0m latency P01: 8.7ms
+[2m2025-09-10T12:00:13.436414Z[0m [32m INFO[0m latency P10: 10.4ms
+[2m2025-09-10T12:00:13.436416Z[0m [32m INFO[0m latency P25: 11.2ms
+[2m2025-09-10T12:00:13.436417Z[0m [32m INFO[0m latency P50: 12.0ms
+[2m2025-09-10T12:00:13.436418Z[0m [32m INFO[0m latency P75: 12.9ms
+[2m2025-09-10T12:00:13.436419Z[0m [32m INFO[0m latency P90: 14.0ms
+[2m2025-09-10T12:00:13.436421Z[0m [32m INFO[0m latency P99: 17.1ms
+[2m2025-09-10T12:00:13.436422Z[0m [32m INFO[0m latency max: 39.0ms
+[2m2025-09-10T12:00:13.436422Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:00:13.436423Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:00:13.436424Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 24
+[2m2025-09-10T12:00:13.523846Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:00:15.524712Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:00:25.535577Z[0m [32m INFO[0m queries: 18815
+[2m2025-09-10T12:00:25.535590Z[0m [32m INFO[0m QPS: 1879.47
+[2m2025-09-10T12:00:25.535594Z[0m [32m INFO[0m latency min: 3.6ms
+[2m2025-09-10T12:00:25.535597Z[0m [32m INFO[0m latency P01: 9.3ms
+[2m2025-09-10T12:00:25.535599Z[0m [32m INFO[0m latency P10: 11.0ms
+[2m2025-09-10T12:00:25.535601Z[0m [32m INFO[0m latency P25: 11.8ms
+[2m2025-09-10T12:00:25.535602Z[0m [32m INFO[0m latency P50: 12.7ms
+[2m2025-09-10T12:00:25.535604Z[0m [32m INFO[0m latency P75: 13.5ms
+[2m2025-09-10T12:00:25.535605Z[0m [32m INFO[0m latency P90: 14.6ms
+[2m2025-09-10T12:00:25.535607Z[0m [32m INFO[0m latency P99: 18.0ms
+[2m2025-09-10T12:00:25.535609Z[0m [32m INFO[0m latency max: 38.3ms
+[2m2025-09-10T12:00:25.535610Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:00:25.535612Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:00:25.535613Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 25
+[2m2025-09-10T12:00:25.624341Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:00:27.625220Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:00:37.636491Z[0m [32m INFO[0m queries: 19069
+[2m2025-09-10T12:00:37.636506Z[0m [32m INFO[0m QPS: 1904.76
+[2m2025-09-10T12:00:37.636510Z[0m [32m INFO[0m latency min: 6.0ms
+[2m2025-09-10T12:00:37.636512Z[0m [32m INFO[0m latency P01: 9.7ms
+[2m2025-09-10T12:00:37.636514Z[0m [32m INFO[0m latency P10: 11.4ms
+[2m2025-09-10T12:00:37.636516Z[0m [32m INFO[0m latency P25: 12.2ms
+[2m2025-09-10T12:00:37.636517Z[0m [32m INFO[0m latency P50: 13.0ms
+[2m2025-09-10T12:00:37.636519Z[0m [32m INFO[0m latency P75: 13.9ms
+[2m2025-09-10T12:00:37.636520Z[0m [32m INFO[0m latency P90: 14.9ms
+[2m2025-09-10T12:00:37.636521Z[0m [32m INFO[0m latency P99: 18.2ms
+[2m2025-09-10T12:00:37.636522Z[0m [32m INFO[0m latency max: 44.1ms
+[2m2025-09-10T12:00:37.636523Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:00:37.636524Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:00:37.636525Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 26
+[2m2025-09-10T12:00:37.726235Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:00:39.727108Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:00:49.737897Z[0m [32m INFO[0m queries: 18368
+[2m2025-09-10T12:00:49.737912Z[0m [32m INFO[0m QPS: 1834.83
+[2m2025-09-10T12:00:49.737917Z[0m [32m INFO[0m latency min: 4.8ms
+[2m2025-09-10T12:00:49.737921Z[0m [32m INFO[0m latency P01: 10.5ms
+[2m2025-09-10T12:00:49.737923Z[0m [32m INFO[0m latency P10: 12.3ms
+[2m2025-09-10T12:00:49.737925Z[0m [32m INFO[0m latency P25: 13.2ms
+[2m2025-09-10T12:00:49.737927Z[0m [32m INFO[0m latency P50: 14.1ms
+[2m2025-09-10T12:00:49.737929Z[0m [32m INFO[0m latency P75: 15.0ms
+[2m2025-09-10T12:00:49.737931Z[0m [32m INFO[0m latency P90: 16.1ms
+[2m2025-09-10T12:00:49.737933Z[0m [32m INFO[0m latency P99: 19.3ms
+[2m2025-09-10T12:00:49.737934Z[0m [32m INFO[0m latency max: 27.3ms
+[2m2025-09-10T12:00:49.737936Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:00:49.737938Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:00:49.737939Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 27
+[2m2025-09-10T12:00:49.834039Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:00:51.835077Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:01:01.849481Z[0m [32m INFO[0m queries: 18265
+[2m2025-09-10T12:01:01.849495Z[0m [32m INFO[0m QPS: 1823.88
+[2m2025-09-10T12:01:01.849499Z[0m [32m INFO[0m latency min: 5.7ms
+[2m2025-09-10T12:01:01.849503Z[0m [32m INFO[0m latency P01: 11.2ms
+[2m2025-09-10T12:01:01.849505Z[0m [32m INFO[0m latency P10: 13.0ms
+[2m2025-09-10T12:01:01.849507Z[0m [32m INFO[0m latency P25: 13.8ms
+[2m2025-09-10T12:01:01.849508Z[0m [32m INFO[0m latency P50: 14.7ms
+[2m2025-09-10T12:01:01.849510Z[0m [32m INFO[0m latency P75: 15.7ms
+[2m2025-09-10T12:01:01.849512Z[0m [32m INFO[0m latency P90: 16.7ms
+[2m2025-09-10T12:01:01.849513Z[0m [32m INFO[0m latency P99: 19.7ms
+[2m2025-09-10T12:01:01.849515Z[0m [32m INFO[0m latency max: 57.9ms
+[2m2025-09-10T12:01:01.849516Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:01:01.849518Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:01:01.849519Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 28
+[2m2025-09-10T12:01:01.938552Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:01:03.939467Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:01:13.950658Z[0m [32m INFO[0m queries: 18555
+[2m2025-09-10T12:01:13.950673Z[0m [32m INFO[0m QPS: 1853.44
+[2m2025-09-10T12:01:13.950676Z[0m [32m INFO[0m latency min: 4.4ms
+[2m2025-09-10T12:01:13.950680Z[0m [32m INFO[0m latency P01: 11.4ms
+[2m2025-09-10T12:01:13.950681Z[0m [32m INFO[0m latency P10: 13.3ms
+[2m2025-09-10T12:01:13.950683Z[0m [32m INFO[0m latency P25: 14.1ms
+[2m2025-09-10T12:01:13.950685Z[0m [32m INFO[0m latency P50: 15.0ms
+[2m2025-09-10T12:01:13.950686Z[0m [32m INFO[0m latency P75: 15.9ms
+[2m2025-09-10T12:01:13.950688Z[0m [32m INFO[0m latency P90: 17.0ms
+[2m2025-09-10T12:01:13.950690Z[0m [32m INFO[0m latency P99: 20.1ms
+[2m2025-09-10T12:01:13.950692Z[0m [32m INFO[0m latency max: 43.8ms
+[2m2025-09-10T12:01:13.950693Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:01:13.950694Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:01:13.950696Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 29
+[2m2025-09-10T12:01:14.040947Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:01:16.041915Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:01:26.054835Z[0m [32m INFO[0m queries: 18561
+[2m2025-09-10T12:01:26.054849Z[0m [32m INFO[0m QPS: 1853.72
+[2m2025-09-10T12:01:26.054853Z[0m [32m INFO[0m latency min: 5.2ms
+[2m2025-09-10T12:01:26.054856Z[0m [32m INFO[0m latency P01: 12.0ms
+[2m2025-09-10T12:01:26.054858Z[0m [32m INFO[0m latency P10: 13.8ms
+[2m2025-09-10T12:01:26.054860Z[0m [32m INFO[0m latency P25: 14.7ms
+[2m2025-09-10T12:01:26.054862Z[0m [32m INFO[0m latency P50: 15.6ms
+[2m2025-09-10T12:01:26.054864Z[0m [32m INFO[0m latency P75: 16.4ms
+[2m2025-09-10T12:01:26.054865Z[0m [32m INFO[0m latency P90: 17.5ms
+[2m2025-09-10T12:01:26.054867Z[0m [32m INFO[0m latency P99: 20.7ms
+[2m2025-09-10T12:01:26.054868Z[0m [32m INFO[0m latency max: 61.2ms
+[2m2025-09-10T12:01:26.054870Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:01:26.054889Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:01:26.054890Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 30
+[2m2025-09-10T12:01:26.143835Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:01:28.144769Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:01:38.158896Z[0m [32m INFO[0m queries: 19008
+[2m2025-09-10T12:01:38.158911Z[0m [32m INFO[0m QPS: 1898.13
+[2m2025-09-10T12:01:38.158914Z[0m [32m INFO[0m latency min: 5.8ms
+[2m2025-09-10T12:01:38.158918Z[0m [32m INFO[0m latency P01: 12.3ms
+[2m2025-09-10T12:01:38.158920Z[0m [32m INFO[0m latency P10: 14.0ms
+[2m2025-09-10T12:01:38.158921Z[0m [32m INFO[0m latency P25: 14.9ms
+[2m2025-09-10T12:01:38.158923Z[0m [32m INFO[0m latency P50: 15.7ms
+[2m2025-09-10T12:01:38.158924Z[0m [32m INFO[0m latency P75: 16.6ms
+[2m2025-09-10T12:01:38.158925Z[0m [32m INFO[0m latency P90: 17.7ms
+[2m2025-09-10T12:01:38.158927Z[0m [32m INFO[0m latency P99: 20.9ms
+[2m2025-09-10T12:01:38.158928Z[0m [32m INFO[0m latency max: 48.8ms
+[2m2025-09-10T12:01:38.158929Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:01:38.158930Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:01:38.158931Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 31
+[2m2025-09-10T12:01:38.248316Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:01:40.249277Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:01:50.265935Z[0m [32m INFO[0m queries: 18144
+[2m2025-09-10T12:01:50.265952Z[0m [32m INFO[0m QPS: 1811.39
+[2m2025-09-10T12:01:50.265956Z[0m [32m INFO[0m latency min: 5.5ms
+[2m2025-09-10T12:01:50.265960Z[0m [32m INFO[0m latency P01: 13.4ms
+[2m2025-09-10T12:01:50.265961Z[0m [32m INFO[0m latency P10: 15.2ms
+[2m2025-09-10T12:01:50.265963Z[0m [32m INFO[0m latency P25: 16.1ms
+[2m2025-09-10T12:01:50.265965Z[0m [32m INFO[0m latency P50: 17.0ms
+[2m2025-09-10T12:01:50.265967Z[0m [32m INFO[0m latency P75: 18.0ms
+[2m2025-09-10T12:01:50.265969Z[0m [32m INFO[0m latency P90: 19.1ms
+[2m2025-09-10T12:01:50.265971Z[0m [32m INFO[0m latency P99: 22.3ms
+[2m2025-09-10T12:01:50.265973Z[0m [32m INFO[0m latency max: 44.5ms
+[2m2025-09-10T12:01:50.265974Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:01:50.265976Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:01:50.265977Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 32
+[2m2025-09-10T12:01:50.360165Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:01:52.361213Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:02:02.377720Z[0m [32m INFO[0m queries: 17248
+[2m2025-09-10T12:02:02.377735Z[0m [32m INFO[0m QPS: 1721.97
+[2m2025-09-10T12:02:02.377738Z[0m [32m INFO[0m latency min: 5.9ms
+[2m2025-09-10T12:02:02.377742Z[0m [32m INFO[0m latency P01: 14.3ms
+[2m2025-09-10T12:02:02.377744Z[0m [32m INFO[0m latency P10: 16.2ms
+[2m2025-09-10T12:02:02.377746Z[0m [32m INFO[0m latency P25: 17.3ms
+[2m2025-09-10T12:02:02.377748Z[0m [32m INFO[0m latency P50: 18.5ms
+[2m2025-09-10T12:02:02.377749Z[0m [32m INFO[0m latency P75: 19.8ms
+[2m2025-09-10T12:02:02.377751Z[0m [32m INFO[0m latency P90: 21.0ms
+[2m2025-09-10T12:02:02.377753Z[0m [32m INFO[0m latency P99: 23.8ms
+[2m2025-09-10T12:02:02.377754Z[0m [32m INFO[0m latency max: 57.3ms
+[2m2025-09-10T12:02:02.377755Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:02:02.377756Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:02:02.377757Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 33
+[2m2025-09-10T12:02:02.475242Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:02:04.476237Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:02:14.491519Z[0m [32m INFO[0m queries: 17889
+[2m2025-09-10T12:02:14.491534Z[0m [32m INFO[0m QPS: 1786.18
+[2m2025-09-10T12:02:14.491538Z[0m [32m INFO[0m latency min: 4.8ms
+[2m2025-09-10T12:02:14.491542Z[0m [32m INFO[0m latency P01: 14.6ms
+[2m2025-09-10T12:02:14.491544Z[0m [32m INFO[0m latency P10: 16.6ms
+[2m2025-09-10T12:02:14.491546Z[0m [32m INFO[0m latency P25: 17.4ms
+[2m2025-09-10T12:02:14.491548Z[0m [32m INFO[0m latency P50: 18.3ms
+[2m2025-09-10T12:02:14.491550Z[0m [32m INFO[0m latency P75: 19.3ms
+[2m2025-09-10T12:02:14.491553Z[0m [32m INFO[0m latency P90: 20.4ms
+[2m2025-09-10T12:02:14.491555Z[0m [32m INFO[0m latency P99: 23.9ms
+[2m2025-09-10T12:02:14.491556Z[0m [32m INFO[0m latency max: 63.1ms
+[2m2025-09-10T12:02:14.491558Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:02:14.491560Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:02:14.491561Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 34
+[2m2025-09-10T12:02:14.584073Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:02:16.585089Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:02:26.600656Z[0m [32m INFO[0m queries: 18046
+[2m2025-09-10T12:02:26.600671Z[0m [32m INFO[0m QPS: 1801.81
+[2m2025-09-10T12:02:26.600674Z[0m [32m INFO[0m latency min: 6.0ms
+[2m2025-09-10T12:02:26.600679Z[0m [32m INFO[0m latency P01: 15.1ms
+[2m2025-09-10T12:02:26.600680Z[0m [32m INFO[0m latency P10: 17.0ms
+[2m2025-09-10T12:02:26.600682Z[0m [32m INFO[0m latency P25: 17.9ms
+[2m2025-09-10T12:02:26.600683Z[0m [32m INFO[0m latency P50: 18.8ms
+[2m2025-09-10T12:02:26.600685Z[0m [32m INFO[0m latency P75: 19.8ms
+[2m2025-09-10T12:02:26.600686Z[0m [32m INFO[0m latency P90: 20.8ms
+[2m2025-09-10T12:02:26.600688Z[0m [32m INFO[0m latency P99: 24.0ms
+[2m2025-09-10T12:02:26.600689Z[0m [32m INFO[0m latency max: 34.2ms
+[2m2025-09-10T12:02:26.600690Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:02:26.600691Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:02:26.600692Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 35
+[2m2025-09-10T12:02:26.694605Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:02:28.695547Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:02:38.713487Z[0m [32m INFO[0m queries: 16677
+[2m2025-09-10T12:02:38.713502Z[0m [32m INFO[0m QPS: 1664.72
+[2m2025-09-10T12:02:38.713506Z[0m [32m INFO[0m latency min: 4.1ms
+[2m2025-09-10T12:02:38.713510Z[0m [32m INFO[0m latency P01: 17.1ms
+[2m2025-09-10T12:02:38.713512Z[0m [32m INFO[0m latency P10: 19.0ms
+[2m2025-09-10T12:02:38.713514Z[0m [32m INFO[0m latency P25: 20.0ms
+[2m2025-09-10T12:02:38.713517Z[0m [32m INFO[0m latency P50: 20.9ms
+[2m2025-09-10T12:02:38.713519Z[0m [32m INFO[0m latency P75: 22.0ms
+[2m2025-09-10T12:02:38.713521Z[0m [32m INFO[0m latency P90: 23.0ms
+[2m2025-09-10T12:02:38.713523Z[0m [32m INFO[0m latency P99: 26.1ms
+[2m2025-09-10T12:02:38.713524Z[0m [32m INFO[0m latency max: 44.4ms
+[2m2025-09-10T12:02:38.713526Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:02:38.713527Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:02:38.713529Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 36
+[2m2025-09-10T12:02:38.810361Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:02:40.811364Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:02:50.829860Z[0m [32m INFO[0m queries: 16663
+[2m2025-09-10T12:02:50.829895Z[0m [32m INFO[0m QPS: 1663.23
+[2m2025-09-10T12:02:50.829899Z[0m [32m INFO[0m latency min: 5.0ms
+[2m2025-09-10T12:02:50.829902Z[0m [32m INFO[0m latency P01: 17.6ms
+[2m2025-09-10T12:02:50.829904Z[0m [32m INFO[0m latency P10: 19.6ms
+[2m2025-09-10T12:02:50.829906Z[0m [32m INFO[0m latency P25: 20.5ms
+[2m2025-09-10T12:02:50.829907Z[0m [32m INFO[0m latency P50: 21.5ms
+[2m2025-09-10T12:02:50.829909Z[0m [32m INFO[0m latency P75: 22.6ms
+[2m2025-09-10T12:02:50.829911Z[0m [32m INFO[0m latency P90: 23.8ms
+[2m2025-09-10T12:02:50.829912Z[0m [32m INFO[0m latency P99: 27.0ms
+[2m2025-09-10T12:02:50.829914Z[0m [32m INFO[0m latency max: 47.9ms
+[2m2025-09-10T12:02:50.829915Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:02:50.829916Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:02:50.829917Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 37
+[2m2025-09-10T12:02:50.928680Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:02:52.929739Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:03:02.948100Z[0m [32m INFO[0m queries: 16262
+[2m2025-09-10T12:03:02.948116Z[0m [32m INFO[0m QPS: 1623.23
+[2m2025-09-10T12:03:02.948119Z[0m [32m INFO[0m latency min: 6.3ms
+[2m2025-09-10T12:03:02.948123Z[0m [32m INFO[0m latency P01: 18.9ms
+[2m2025-09-10T12:03:02.948125Z[0m [32m INFO[0m latency P10: 20.8ms
+[2m2025-09-10T12:03:02.948127Z[0m [32m INFO[0m latency P25: 21.8ms
+[2m2025-09-10T12:03:02.948128Z[0m [32m INFO[0m latency P50: 22.7ms
+[2m2025-09-10T12:03:02.948130Z[0m [32m INFO[0m latency P75: 23.7ms
+[2m2025-09-10T12:03:02.948132Z[0m [32m INFO[0m latency P90: 24.8ms
+[2m2025-09-10T12:03:02.948134Z[0m [32m INFO[0m latency P99: 27.9ms
+[2m2025-09-10T12:03:02.948135Z[0m [32m INFO[0m latency max: 37.1ms
+[2m2025-09-10T12:03:02.948136Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:03:02.948137Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:03:02.948138Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 38
+[2m2025-09-10T12:03:03.044715Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:03:05.044805Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:03:15.067939Z[0m [32m INFO[0m queries: 16869
+[2m2025-09-10T12:03:15.067955Z[0m [32m INFO[0m QPS: 1683.02
+[2m2025-09-10T12:03:15.067959Z[0m [32m INFO[0m latency min: 5.3ms
+[2m2025-09-10T12:03:15.067964Z[0m [32m INFO[0m latency P01: 18.7ms
+[2m2025-09-10T12:03:15.067966Z[0m [32m INFO[0m latency P10: 20.7ms
+[2m2025-09-10T12:03:15.067967Z[0m [32m INFO[0m latency P25: 21.6ms
+[2m2025-09-10T12:03:15.067969Z[0m [32m INFO[0m latency P50: 22.5ms
+[2m2025-09-10T12:03:15.067971Z[0m [32m INFO[0m latency P75: 23.4ms
+[2m2025-09-10T12:03:15.067973Z[0m [32m INFO[0m latency P90: 24.6ms
+[2m2025-09-10T12:03:15.067974Z[0m [32m INFO[0m latency P99: 27.7ms
+[2m2025-09-10T12:03:15.067976Z[0m [32m INFO[0m latency max: 37.5ms
+[2m2025-09-10T12:03:15.067977Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:03:15.067978Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:03:15.067979Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 39
+[2m2025-09-10T12:03:15.165983Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:03:17.167059Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:03:27.188734Z[0m [32m INFO[0m queries: 14974
+[2m2025-09-10T12:03:27.188748Z[0m [32m INFO[0m QPS: 1494.17
+[2m2025-09-10T12:03:27.188752Z[0m [32m INFO[0m latency min: 6.0ms
+[2m2025-09-10T12:03:27.188756Z[0m [32m INFO[0m latency P01: 20.2ms
+[2m2025-09-10T12:03:27.188757Z[0m [32m INFO[0m latency P10: 22.5ms
+[2m2025-09-10T12:03:27.188760Z[0m [32m INFO[0m latency P25: 23.8ms
+[2m2025-09-10T12:03:27.188764Z[0m [32m INFO[0m latency P50: 26.3ms
+[2m2025-09-10T12:03:27.188766Z[0m [32m INFO[0m latency P75: 28.2ms
+[2m2025-09-10T12:03:27.188767Z[0m [32m INFO[0m latency P90: 29.4ms
+[2m2025-09-10T12:03:27.188769Z[0m [32m INFO[0m latency P99: 32.1ms
+[2m2025-09-10T12:03:27.188770Z[0m [32m INFO[0m latency max: 72.4ms
+[2m2025-09-10T12:03:27.188771Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:03:27.188773Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:03:27.188773Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 40
+[2m2025-09-10T12:03:27.286286Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:03:29.287253Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:03:39.307659Z[0m [32m INFO[0m queries: 17121
+[2m2025-09-10T12:03:39.307675Z[0m [32m INFO[0m QPS: 1708.62
+[2m2025-09-10T12:03:39.307678Z[0m [32m INFO[0m latency min: 3.9ms
+[2m2025-09-10T12:03:39.307682Z[0m [32m INFO[0m latency P01: 19.0ms
+[2m2025-09-10T12:03:39.307684Z[0m [32m INFO[0m latency P10: 21.0ms
+[2m2025-09-10T12:03:39.307685Z[0m [32m INFO[0m latency P25: 22.0ms
+[2m2025-09-10T12:03:39.307687Z[0m [32m INFO[0m latency P50: 23.1ms
+[2m2025-09-10T12:03:39.307688Z[0m [32m INFO[0m latency P75: 24.6ms
+[2m2025-09-10T12:03:39.307690Z[0m [32m INFO[0m latency P90: 26.2ms
+[2m2025-09-10T12:03:39.307691Z[0m [32m INFO[0m latency P99: 29.2ms
+[2m2025-09-10T12:03:39.307693Z[0m [32m INFO[0m latency max: 82.0ms
+[2m2025-09-10T12:03:39.307693Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:03:39.307694Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:03:39.307695Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 41
+[2m2025-09-10T12:03:39.399756Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:03:41.399715Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:03:51.422757Z[0m [32m INFO[0m queries: 18564
+[2m2025-09-10T12:03:51.422772Z[0m [32m INFO[0m QPS: 1852.14
+[2m2025-09-10T12:03:51.422775Z[0m [32m INFO[0m latency min: 4.0ms
+[2m2025-09-10T12:03:51.422779Z[0m [32m INFO[0m latency P01: 18.2ms
+[2m2025-09-10T12:03:51.422781Z[0m [32m INFO[0m latency P10: 20.1ms
+[2m2025-09-10T12:03:51.422783Z[0m [32m INFO[0m latency P25: 21.0ms
+[2m2025-09-10T12:03:51.422784Z[0m [32m INFO[0m latency P50: 22.0ms
+[2m2025-09-10T12:03:51.422786Z[0m [32m INFO[0m latency P75: 23.1ms
+[2m2025-09-10T12:03:51.422788Z[0m [32m INFO[0m latency P90: 24.3ms
+[2m2025-09-10T12:03:51.422790Z[0m [32m INFO[0m latency P99: 27.5ms
+[2m2025-09-10T12:03:51.422791Z[0m [32m INFO[0m latency max: 40.0ms
+[2m2025-09-10T12:03:51.422792Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:03:51.422793Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:03:51.422794Z[0m [32m INFO[0m recall max: 0.0
+-------------------
+./vector-search-benchmark search --data-dir ./dataset/openai/openai_small_50k --scylla 127.0.1.1:9042 --limit 100 --duration 10s --vector-store 127.0.1.1:6080 --concurrency 42
+[2m2025-09-10T12:03:51.519606Z[0m [32m INFO[0m Synchronizing search tasks to start after 2.00s
+[2m2025-09-10T12:03:53.520644Z[0m [32m INFO[0m Starting search tasks
+[2m2025-09-10T12:04:03.541968Z[0m [32m INFO[0m queries: 17675
+[2m2025-09-10T12:04:03.541983Z[0m [32m INFO[0m QPS: 1763.75
+[2m2025-09-10T12:04:03.541986Z[0m [32m INFO[0m latency min: 6.3ms
+[2m2025-09-10T12:04:03.541989Z[0m [32m INFO[0m latency P01: 19.8ms
+[2m2025-09-10T12:04:03.541991Z[0m [32m INFO[0m latency P10: 21.8ms
+[2m2025-09-10T12:04:03.541993Z[0m [32m INFO[0m latency P25: 22.7ms
+[2m2025-09-10T12:04:03.541995Z[0m [32m INFO[0m latency P50: 23.7ms
+[2m2025-09-10T12:04:03.541996Z[0m [32m INFO[0m latency P75: 24.7ms
+[2m2025-09-10T12:04:03.541998Z[0m [32m INFO[0m latency P90: 25.9ms
+[2m2025-09-10T12:04:03.542000Z[0m [32m INFO[0m latency P99: 28.9ms
+[2m2025-09-10T12:04:03.542001Z[0m [32m INFO[0m latency max: 50.4ms
+[2m2025-09-10T12:04:03.542002Z[0m [32m INFO[0m recall min: 0.0
+[2m2025-09-10T12:04:03.542003Z[0m [32m INFO[0m recall avg: 0.0
+[2m2025-09-10T12:04:03.542004Z[0m [32m INFO[0m recall max: 0.0
+-------------------
