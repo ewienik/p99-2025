@@ -8,7 +8,7 @@ def subplots():
     fig, ax = plt.subplots(2, 1, gridspec_kw={"hspace": 0}, figsize=[9.6, 4.3], layout="tight")
     return fig, ax
 
-def savefig(path, xmin=1, xmax=120, legend="top"):
+def savefig(path, xmin=1, xmax=120, legend="top", transparent=True):
     ax[0].set_ylabel("QPS [count/s]")
     if legend=="top":
         ax[0].legend()
@@ -31,7 +31,7 @@ def savefig(path, xmin=1, xmax=120, legend="top"):
 
     plt.xlabel("Concurrency")
 
-    plt.savefig(path, transparent=True)
+    plt.savefig(path, transparent=transparent)
     #plt.close()
 
 colors = (
@@ -58,10 +58,10 @@ savefig("nagle-scylla-vs.png")
 quorum = pd.read_csv("data/1tokio-rayon-quorum.csv")
 
 fig, ax = subplots()
-ax[0].plot(nagle["Concurrency"], nagle["QPS"], color=colors[0][0], label="scylla+nagle")
-ax[1].plot(nagle["Concurrency"], nagle["P99"], color=colors[0][0], label="scylla+nagle")
-ax[0].plot(quorum["Concurrency"], quorum["QPS"], color=colors[0][2], label="scylla")
-ax[1].plot(quorum["Concurrency"], quorum["P99"], color=colors[0][2], label="scylla")
+ax[0].plot(nagle["Concurrency"], nagle["QPS"], color=colors[0][0], label="scylla")
+ax[1].plot(nagle["Concurrency"], nagle["P99"], color=colors[0][0], label="scylla")
+ax[0].plot(quorum["Concurrency"], quorum["QPS"], color=colors[0][2], label="scylla no nagle")
+ax[1].plot(quorum["Concurrency"], quorum["P99"], color=colors[0][2], label="scylla no nagle")
 ax[0].plot(vs["Concurrency"], vs["QPS"], color=colors[0][1], label="vector-store")
 ax[1].plot(vs["Concurrency"], vs["P99"], color=colors[0][1], label="vector-store")
 savefig("nagle-quorum-scylla-vs.png")
@@ -291,6 +291,27 @@ ax[0].plot(a4s0_aws_100m_100_sc["Concurrency"], a4s0_aws_100m_100_sc["QPS"], col
 ax[1].plot(a4s0_aws_100m_100_sc["Concurrency"], a4s0_aws_100m_100_sc["P99"], color=colors[0][1], label="a4s0 k=100 recall~=98.4%")
 savefig("a4s0-aws-100m.png", xmax=480)
 
+a4s0_aws_50k_10_sc = pd.read_csv("data/a4s0-aws-50k-10-scylla.csv")
+a4s0_aws_50k_100_sc = pd.read_csv("data/a4s0-aws-50k-100-scylla.csv")
+
+fig, ax = subplots()
+ax[0].plot(a4s0_aws_50k_10_sc["Concurrency"], a4s0_aws_50k_10_sc["QPS"], color=colors[0][0], label="a4s0 k=10 recall~=99.2%")
+ax[1].plot(a4s0_aws_50k_10_sc["Concurrency"], a4s0_aws_50k_10_sc["P99"], color=colors[0][0], label="a4s0 k=10 recall~=99.2%")
+ax[0].plot(a4s0_aws_50k_100_sc["Concurrency"], a4s0_aws_50k_100_sc["QPS"], color=colors[0][1], label="a4s0 k=100 recall~=95.2%")
+ax[1].plot(a4s0_aws_50k_100_sc["Concurrency"], a4s0_aws_50k_100_sc["P99"], color=colors[0][1], label="a4s0 k=100 recall~=95.2%")
+savefig("a4s0-aws-50k.png", xmax=480)
+
+fig, ax = subplots()
+ax[0].plot(a4s0_aws_50k_10_sc["Concurrency"], a4s0_aws_50k_10_sc["QPS"], color=colors[0][0], label="a4s0 dataset=50k k=10 recall~=99.2%")
+ax[1].plot(a4s0_aws_50k_10_sc["Concurrency"], a4s0_aws_50k_10_sc["P99"], color=colors[0][0], label="a4s0 dataset=50k k=10 recall~=99.2%")
+ax[0].plot(a4s0_aws_50k_100_sc["Concurrency"], a4s0_aws_50k_100_sc["QPS"], color=colors[1][1], label="a4s0 dataset=50k k=100 recall~=95.2%")
+ax[1].plot(a4s0_aws_50k_100_sc["Concurrency"], a4s0_aws_50k_100_sc["P99"], color=colors[1][1], label="a4s0 dataset=50k k=100 recall~=95.2%")
+ax[0].plot(a4s0_aws_100m_10_sc["Concurrency"], a4s0_aws_100m_10_sc["QPS"], color=colors[0][0], label="a4s0 dataset=100m k=10 recall~=97.2%")
+ax[1].plot(a4s0_aws_100m_10_sc["Concurrency"], a4s0_aws_100m_10_sc["P99"], color=colors[0][0], label="a4s0 dataset=100m k=10 recall~=97.2%")
+ax[0].plot(a4s0_aws_100m_100_sc["Concurrency"], a4s0_aws_100m_100_sc["QPS"], color=colors[0][1], label="a4s0 dataset=100m k=100 recall~=98.4%")
+ax[1].plot(a4s0_aws_100m_100_sc["Concurrency"], a4s0_aws_100m_100_sc["P99"], color=colors[0][1], label="a4s0 dataset=100m k=100 recall~=98.4%")
+savefig("a4s0-aws-100m-50k.png", xmax=480, legend="bottom")
+
 xtask = [
     0,
     1,
@@ -355,7 +376,11 @@ ytask1 = [
 
 fig, ax = plt.subplots(1, 1, figsize=[9.6, 4.3], layout="tight")
 ax.plot(xtask, ytask1, color=colors[0][0], label="ideal task")
-ax.yaxis.set_visible(False)
+yticks = ax.get_yticks()
+ax.set_yticks(yticks, labels=[])
+xticks = ax.get_xticks()
+ax.set_xticks(xticks, labels=[])
+ax.set_xlim(-1, 136)
 plt.ylabel("CPU Usage")
 plt.xlabel("Time")
 plt.savefig("task-scheduling-single.png", transparent=True)
@@ -474,7 +499,11 @@ ytask2 = [
 fig, ax = plt.subplots(1, 1, figsize=[9.6, 4.3], layout="tight")
 ax.plot(xtask, ytask1, color=colors[0][0], label="task1")
 ax.plot(xtask, ytask2, color=colors[0][1], label="task2")
-ax.yaxis.set_visible(False)
+yticks = ax.get_yticks()
+ax.set_yticks(yticks, labels=[])
+xticks = ax.get_xticks()
+ax.set_xticks(xticks, labels=[])
+ax.set_xlim(-1, 241)
 plt.ylabel("CPU Usage")
 plt.xlabel("Time")
 plt.savefig("task-scheduling-two.png", transparent=True)

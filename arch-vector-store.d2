@@ -7,20 +7,29 @@ classes: {
     style.opacity: 0
     label: a
   }
+  vector-store: {
+    label: "Vector Store"
+  }
+  scylla: {
+    label: "Scylla"
+    shape: cylinder
+  }
 }
 
 direction: right
 
-scylla.shape: cylinder
+scylla.class: scylla
 
 vector-store: {
+  class: vector-Store
+
   httpd
   db-index
   db
   monitor-items
   monitor-indexes
   index: {
-    uSearch.height: 200
+    USearch.height: 200
   }
 
   db <- monitor-indexes
